@@ -15,3 +15,4 @@ Django
 SQLite3 (when ran local)
 Heroku
 Pandas
+Dataset From https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
