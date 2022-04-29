@@ -4,7 +4,7 @@ In Book recommendation system user can give different user inputs based on ratin
 Will be doing 3 recommendation system Content-Based Filtering, Collaborative Filtering and combination of both (Hybrid Filtering).
   # Content-Based Filtering:
 In this recommender systems if a person likes a particular book, he or she will also like any book which is like it. 
-  # Collaborative filtering engines: 
+  # Collaborative Filtering: 
 Predict the rating or preference that a user would give a book based on past ratings and preferences of other users.
   # Hybrid Filtering: 
 Model which recommends books based on your history as well based on similar users likes.
@@ -13,6 +13,7 @@ Model which recommends books based on your history as well based on similar user
 Python,
 SQLite3,
 Pandas,
+Jupyter Notebook
 
 # Dataset 
 https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
