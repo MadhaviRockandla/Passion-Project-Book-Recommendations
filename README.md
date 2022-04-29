@@ -10,11 +10,9 @@ Predict the rating or preference that a user would give a book based on past rat
 Model which recommends books based on your history as well based on similar users likes.
 
 # I will be using:
-Python
-Django
-SQLite3 (when ran local)
-Heroku
-Pandas
+Python,
+SQLite3,
+Pandas,
 
 # Dataset 
 https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset
