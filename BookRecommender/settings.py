@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-## import django_heroku
+### import django_heroku
 ## import dj_database_url
 import dotenv
 # from allauth.account import *
@@ -176,13 +176,15 @@ USE_TZ = True
 
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-# STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+#STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 # https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 
 # debugging static problems when deploying:
 
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -203,8 +205,13 @@ STATIC_URL = '/static/'
 # http://whitenoise.evans.io/en/stable/django.html#add-compression-and-caching-support
 
 # Commented out for whitenoise error
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+
+
+
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 # DJANGO-CRISPY-FORMS CONFIGS
 # ------------------------------------------------------------------------------
 # https://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
