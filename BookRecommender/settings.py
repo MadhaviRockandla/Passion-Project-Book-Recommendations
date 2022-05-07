@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+## import django_heroku
 import dj_database_url
 import dotenv
 
@@ -34,7 +34,7 @@ load_dotenv(find_dotenv())
     # SECRET_KEY = os.environ['SECRET_KEY']
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECRET_KEY
-SECRET_KEY = os.environ['SECRET_KEY']
+##SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'BookRecommender.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
-}
+# DATABASES = {
+#     'default': dj_database_url.config(conn_max_age=600)
+# }
 
 
 # DATABASES = {
@@ -221,8 +221,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+##django_heroku.settings(locals())
 
 #To allow for SQlite locally
-options = DATABASES['default'].get('OPTIONS', {})
-options.pop('sslmode', None)
+##options = DATABASES['default'].get('OPTIONS', {})
+##options.pop('sslmode', None)
