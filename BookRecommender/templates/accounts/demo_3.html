@@ -1,0 +1,58 @@
+<!--{% extends 'layout.html' %}-->
+<!--{% block body %}-->
+
+<!--{% block content %}-->
+<!--<div class="container">-->
+<!--&lt;!&ndash;    {% for message in get_flashed_messages() %}&ndash;&gt;-->
+<!--    <div class="alert alert-warning">-->
+<!--        <button type="button" class="close" data-dismiss="alert">&times;</button>-->
+<!--&lt;!&ndash;        {{ message }}&ndash;&gt;-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+
+<!--    {% block page_content %}{% endblock %}-->
+<!--</div>-->
+<!--{% endblock %}-->
+
+<html>
+  <style>
+    body {
+    background-image: url('https://i.pinimg.com/originals/d0/4a/2a/d04a2a9694c81133f120a0c32ba947fd.jpg');
+    background-size: contain;
+    }
+
+  </style>
+
+<center>
+<div class="loginbox">
+	<h1>Login to Account</h1>
+	<form action="/action_login" method="POST">
+	<input class="loginelement" type="text" placeholder="Username" name="username"><br>
+	<input class="loginelement" type="password" placeholder="Password" name="password"><br>
+	<input class="loginelement" type="submit" value="Login">
+	</form>
+</div>
+<br><br>
+<div class="loginbox">
+	<h1>Create Account</h1>
+	<form action="/action_createaccount" method="POST">
+	<input class="loginelement" type="email" placeholder="Email" name="email"><br>
+	<input class="loginelement" type="text" placeholder="Username" name="username"><br>
+	<input class="loginelement" type="password" placeholder="Password" name="password"><br>
+	<input class="loginelement" type="submit" value="Create">
+	</form>
+
+</div>
+    <center>
+<!-- {% with messages = get_flashed_messages() %}-->
+<!--   {% if messages %}-->
+     <ul class="flashes">
+<!--        {% for message in messages %}-->
+<!--         <div class="message_flash">{{ message }}</div>-->
+<!--        {% endfor %}-->
+    </ul>
+<!--
+  {% endif %}
+ {% endwith %}
+
+{% endblock %}-->
