@@ -12,7 +12,7 @@ import os
 ## import django_heroku
 ## import dj_database_url
 import dotenv
-
+# from allauth.account import *
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
