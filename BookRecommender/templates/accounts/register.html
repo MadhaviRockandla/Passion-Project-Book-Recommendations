@@ -1,18 +1,31 @@
-{% extends "_base.html" %}
+<!--{% extends "_base.html" %}
 
 
 {% block content %}
 
-{% if not request.user.is_authenticated %}
+{% if not request.user.is_authenticated %}-->
+<html>
+  <style>
+    body {
+    background-image: url('https://blog.hubspot.com/hubfs/brain-training-books.jpg');
+    background-size: contain;
+    }
+
+  </style>
+<center>
     <div style='margin-top:30px;'>
-        <form method='POST'>{% csrf_token %}
-            {{ form.as_p }}
+        <form method='POST'>
+  <!--          {% csrf_token %}
+            {{ form.as_p }}-->
             <button type='submit'>Register</button>
         </form>
         <p>Already have an account? Please <a href='/login'>Login</a></p>
     </div>
-{% else %}
+<!--{% else %}-->
 <p>You're already logged in to your account. Would you like to <a href='/logout/'>logout</a>?</p>
-{% endif %}
+<!--{% endif %}-->
 
-{% endblock %}
+<!--
+{% endblock %}-->
+<center>
+<html>

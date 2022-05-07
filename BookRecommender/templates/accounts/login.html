@@ -1,19 +1,34 @@
-{% extends "_base.html" %}
+<!--{% extends "_base.html" %}
 
 
 {% block content %}
 
-{% if not request.user.is_authenticated %}
+{% if not request.user.is_authenticated %}-->
+
+<html>
+  <style>
+    body {
+    background-image: url('https://i.pinimg.com/originals/d0/4a/2a/d04a2a9694c81133f120a0c32ba947fd.jpg');
+    background-size: contain;
+    }
+
+  </style>
+    <center>
     <div style='margin-top:30px;'>
-        <form method='POST'>{% csrf_token %}
-            {{ form.as_p }}
+        <form method='POST'>
+<!--            {% csrf_token %}
+            {{ form.as_p }}-->
             <button type='submit'>Login</button>
         </form>
 
         <p>Need an account? Please <a href='/register'>Register</a></p>
     </div>
-{% else %}
+<!--{% else %}-->
 <p>You're already logged in. Would you like to <a href='/logout/'>logout</a>?</p>
+    <center>
+<html>
+
+<!--
 {% endif %}
 
-{% endblock %}
+{% endblock %}-->

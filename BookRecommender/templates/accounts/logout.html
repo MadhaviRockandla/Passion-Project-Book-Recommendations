@@ -1,17 +1,30 @@
-{% extends "_base.html" %}
+<!--{% extends "_base.html" %}
 
 
 {% block content %}
 
-{% if request.user.is_authenticated %}
+{% if request.user.is_authenticated %}-->
+
+<html>
+  <style>
+    body {
+    background-image: url('https://learnenglishteens.britishcouncil.org/sites/teens/files/styles/article/public/rs7364_thinkstockphotos-515067268-low.jpg?itok=6PTAbSRX');
+    background-size: contain;
+    }
+
+  </style>
+  <center>
     <div style='margin-top:30px;'>
-        <form method='POST'>{% csrf_token %}
+        <form method='POST'>
+           <!-- {% csrf_token %}-->
             <p>Are you sure you want to logout?</p>
             <button type='submit'>Yes, logout.</button>
         </form>
     </div>
-{% else %}
+    <center>
+<!--{% else %}-->
 <p>You're not logged in. Would you like to <a href='/login/'>login</a>?</p>
-{% endif %}
-
-{% endblock %}
+<!--{% endif %}-->
+<html>
+<!--
+{% endblock %}-->
