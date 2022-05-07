@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<html>
+    <style>
+        body {
+        background-image: url('https://techmende.com/wp-content/uploads/2021/12/Find-Book-Without-Author-Featured.jpg');
+        background-size: contain;
+        }
+    </style>
+
+
+<center>
+   <body>
+        <form class="d-flex" method="POST" action="{% url 'search-books' %}">
+<!--            {% csrf_token %}-->
+            <input class="form-control me-2"
+             type="search" placeholder="Search User ID" aria-label="Search" name="searched">
+             <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+<center>
+
+    {% if searched %}
+        <h1>Search for {{ searched }}</h1>
+        <br/>
+        {% for book in books %}
+            {{ book }}<br/>
+        {% endfor %}
+    {% else %}
+        <h1>Enter Valid User ID </h1>
+    {% endif %}
+
+
+{% endblock content %}
