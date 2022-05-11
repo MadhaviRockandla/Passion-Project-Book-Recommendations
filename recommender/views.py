@@ -37,10 +37,10 @@ def search_books(request):
         search_ui = request.POST['searched']
         search_ui = int(search_ui)
         runEngine(search_ui)
-        books = recommender_book.objects.filter(UserID=search_ui)
+        new_books = recommender_book.objects.filter(UserID=search_ui)
         return render(request, 'search_books.html',
                         {'searched': search_ui,
-                         'books': books})
+                         'books': new_books})
     else:
         return render(request, 'search_books.html', {})
 
@@ -53,12 +53,12 @@ def app(request):
         thriller = request.POST['thriller']
         nonfiction = request.POST['nonfiction']
         coldrunEngine(horror, romance, thriller, nonfiction)
-        books = recommender_book.objects.filter(UserID=1)
+        new_books = recommender_book.objects.filter(UserID=1)
         return render(request, 'app.html',
                         {'searched': f"Horror: {horror}\n "
                                      f"Romance: {romance}\n "
                                      f"Thriller: {thriller}\n "
                                      f"Non-Fiction: {nonfiction}\n ",
-                         'books': books})
+                         'books': new_books})
     else:
         return render(request, 'app.html', {})

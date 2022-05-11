@@ -53,7 +53,7 @@ def runEngine(user_id):
 
 
     book_rating = pd.merge(rating, book, on='ISBN')
-    cols = ['Year-Of-Publication', 'Publisher', 'Book-Author', 'Image-URL-S', 'Image-URL-M', 'Image-URL-L']
+    cols = ['Year-Of-Publication', 'Publisher', 'Book-Author']
     book_rating.drop(cols, axis=1, inplace=True)
 
     rating_count = (book_rating.

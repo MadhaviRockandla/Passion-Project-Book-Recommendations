@@ -9,10 +9,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+
 ### import django_heroku
 ## import dj_database_url
 import dotenv
 # from allauth.account import *
+# from allauth import account
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +43,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['bookrecmay2022.herokuapp.com', 'bookrecommendermay2022.herokuapp.com', 'localhost', '0.0.0.0', '127.0.0.1']
 
+
+## ALLOWED_HOSTS = ['127.0.0.1']
+
 # Security
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
@@ -49,6 +54,7 @@ CSRF_COOKIE_SECURE = False
 # Application definition
 
 INSTALLED_APPS = [
+    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,9 +62,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recommender',
-    'accounts',
     'whitenoise.runserver_nostatic',
+    'django.contrib.sites',
+    ##'account. apps.AccountConfig'
+    ## 'users.apps.UsersConfig',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,7 +79,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+#Default one
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 ROOT_URLCONF = 'BookRecommender.urls'
 
 TEMPLATES = [
@@ -84,6 +97,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.auth.backends.ModelBackend',
             ],
         },
     },
@@ -99,7 +113,7 @@ WSGI_APPLICATION = 'BookRecommender.wsgi.application'
 #     'default': dj_database_url.config(conn_max_age=600)
 # }
 
-
+#
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -114,16 +128,16 @@ WSGI_APPLICATION = 'BookRecommender.wsgi.application'
 # Nvm, 3 has changes that aren't reflected in Django yet, back to 2.
 
 # Commented out local db settings
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'recommender',
-#         'USER': 'postgres',
-#         'PASSWORD': 'zipcode',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'recommender',
+        'USER': 'postgres',
+        'PASSWORD': 'zipcode',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 # Meant to allow for Heroku to find it's db while also allowing for sqlite locally
 # Must have .env locally to use!

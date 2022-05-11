@@ -1,9 +1,9 @@
 from django.contrib import admin
+from recommender.models import recommender_book
 
 
-from .models import recommender_book
 
 class recommender_bookAdmin(admin.ModelAdmin):
-    pass
-admin.site.register(recommender_book, recommender_bookAdmin)
+
+    admin.site.register(recommender_book, admin)
 # Register your models here.
