@@ -32,7 +32,9 @@ An example of this is keeping track of what a user clicks.
 Python,
 SQLite3,
 Pandas,
-Jupyter Notebook
+Jupyter Notebook,
+Django,
+Streamlit
 
 
 # Dataset 
